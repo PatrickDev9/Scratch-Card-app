@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>A Scratch Card App</title>
+</head>
+<body>
+    <div id="frontend">
+        <div class="jumbotron">
+            <h1 class="display-4">SCRATCH CARDS!!!</h1>
+            <p class="lead">Scratch cards available for distribution here.. Join our community of distributors.</p>
+            <hr class="my-4">
+            <p>make extra money distributing recharge cards to customers.. join us!!</p>
+            <a class="btn btn-primary btn-lg signup" href="#" role="button">Join us</a>
+        </div>
+        <div class="container">
+            <form id="signin">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input type="password" class="form-control" id="pass" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary signInPage">Sign in</button>
+            </form>
+            <form style="display:none" id="signup">
+                <div class="form-group">
+                    <label for="userIn">Username</label>
+                    <input type="text" class="form-control" id="userIn" aria-describedby="emailHelp" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="passed">Password</label>
+                    <input type="password" class="form-control" id="passed" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary signUpPage">Sign up</button>
+            </form>
+            <br />
+            <a href="#" id="backendlink"><em><strong>Signed!!! Administrator.</strong></em></a>
+            <br />
+        </div>
+    </div>
+
+    <div id="inside" style="display:none">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Scratch Cards!!!</h1>
+                <p class="lead" id="client"></p>
+            </div>
+        </div>
+        <!--
+    <p>Amount of scratch cards available: <span class='numOfPins'></span></p>
+    -->
+    </div>
+
+    <div id="backend" style="display:none">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">A Scratch Card Application</h1>
+                <p class="lead" id="operator">Operators log-in page.</p>
+            </div>
+        </div>
+        <div class="container">
+            <form class="form-inline" id="hide">
+                <div class="form-group mb-2">
+                    <label for="decagon" class="sr-only">Username</label>
+                    <input type="text" readonly class="form-control-plaintext" id="decagon" value="Decagon">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="button" id="validate" class="btn btn-secondary mb-2" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Wrong password">
+                    Validate
+                </button>
+            </form>
+
+            <div id="show" style="display: none">
+                <div>
+                    <p>
+                        <button type="button" id="createPin" class="btn btn-secondary btn-lg btn-block">Create Scratch Card</button>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="dropdown col-sm">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div id="list" class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Scratch Card</h5>
+                                <p class="card-text"></p>
+                                <button class="btn btn-danger" id="delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <form class="form-group">
+                            <p>
+                                <div class="input-group ">
+                                    <input type="number" class="form-control" id="ID" aria-describedby="button-addon2" placeholder="Enter ID">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" id="details">Read</button>
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <div class="input-group">
+                                    <input type="datetime" class="form-control" id="validity" placeholder="New Expiry Date">
+                                </div>
+                            </p>
+                            <button type="button" class="btn btn-secondary" id="update">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./practise1.js"></script>
+</body>
+</html>
